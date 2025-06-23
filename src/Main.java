@@ -1,20 +1,41 @@
+// Main.java
 import Algorhythm.PrefixSum;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 /**
  * @author rua
  */
-//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
-// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
+
 public class Main {
     public static void main(String[] args) throws IOException {
-        int[] array = {1,2,3,4,5,6,7,8,9,10};
-        PrefixSum X = new PrefixSum(array);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int[] result = new int[10];
-        X.PrefixSumStart();
+        // 첫 줄: 수의 개수 N, 질의 개수 M
+        StringTokenizer st = new StringTokenizer(br.readLine()," "); //delim 구분자 지정
+        int N = Integer.parseInt(st.nextToken()); // 배열 길이
+        int M = Integer.parseInt(st.nextToken()); // 질의 개수
 
-        System.out.println(X.PrefixSumStartEnd(5,10));
+        // 두 번째 줄: 배열 A
+        int[] array = new int[N];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            array[i] = Integer.parseInt(st.nextToken());
+        }
+
+        // 누적합 클래스 생성
+        PrefixSum ps = new PrefixSum(array);
+
+        // M개의 질의 처리
+        for (int q = 0; q < M; q++) {
+            st = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+
+            System.out.println(ps.PrefixSumStartEnd(start, end));
+        }
     }
 }
