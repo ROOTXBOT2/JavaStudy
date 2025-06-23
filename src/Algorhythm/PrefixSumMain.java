@@ -1,5 +1,4 @@
-// Main.java
-import Algorhythm.PrefixSum;
+package Algorhythm;// Main.java
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +9,7 @@ import java.util.StringTokenizer;
  * @author rua
  */
 
-public class Main {
+public class PrefixSumMain {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
