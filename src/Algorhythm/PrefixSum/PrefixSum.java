@@ -1,4 +1,4 @@
-package Algorhythm;
+package Algorhythm.PrefixSum;
 
 /**
  * @author rua

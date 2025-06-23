@@ -1,4 +1,4 @@
-package Algorhythm;// Main.java
+package Algorhythm.PrefixSum;// Main.java
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
